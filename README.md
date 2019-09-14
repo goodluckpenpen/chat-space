@@ -1,19 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-## users table
+## users
 |Column|Type|Option|
 |------|----|------|
 |name|string|index: true, null: false, unique: true|
@@ -24,40 +11,33 @@ Things you may want to cover:
 - has_many :messages
 - has_many :members
 
-## groups table
+## groups
 |Column|Type|Option|
 |------|----|------|
 |name|string|index: true, null: false, unique: true|
 
 ### Association
-- has_many :uers
+- has_many :users, through: members
 - has_many :members
 
-## members table
+## members
 |Column|Type|Option|
 |------|----|------|
-|user_name|string|index: true, null: false, unique: true|
-|group_name|string|index: true, null: false, unique: true|
+|user_id|string|index: true, null: false, unique: true|
+|group_id|string|index: true, null: false, unique: true|
 
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
-## messages table
+## messages
 |Column|Type|Option|
 |------|----|------|
-|text|text|ndex: true, null: false|
+|text|text|index: true, null: false|
 |image|string|index: true|
+|user_id|string|index: true, null: false, unique: true|
+|group_id|string|index: true, null: false, unique: true|
 
 ### Association
-- belongs_to :users
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- belongs_to :user
+- belongs_to :group
