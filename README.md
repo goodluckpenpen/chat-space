@@ -14,7 +14,7 @@
 ## groups
 |Column|Type|Option|
 |------|----|------|
-|name|string|index: true, null: false, unique: true|
+|name|string|null: false|
 
 ### Association
 - has_many :users, through: members
@@ -35,7 +35,7 @@
 |Column|Type|Option|
 |------|----|------|
 |text|text|index: true, null: false|
-|image|string|index: true|
+|image|string||
 |user_id|references|foreign_key: true, null: false|
 |group_id|references|foreign_key: true, null: false|
 
