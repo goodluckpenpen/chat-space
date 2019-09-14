@@ -19,12 +19,13 @@
 ### Association
 - has_many :users, through: members
 - has_many :members
+- has_many :messages
 
 ## members
 |Column|Type|Option|
 |------|----|------|
-|user_id|string|index: true, null: false, unique: true|
-|group_id|string|index: true, null: false, unique: true|
+|user_id|references|foreign_key: true, null: false|
+|group_id|references|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :user
@@ -35,8 +36,8 @@
 |------|----|------|
 |text|text|index: true, null: false|
 |image|string|index: true|
-|user_id|string|index: true, null: false, unique: true|
-|group_id|string|index: true, null: false, unique: true|
+|user_id|references|foreign_key: true, null: false|
+|group_id|references|foreign_key: true, null: false|
 
 ### Association
 - belongs_to :user
