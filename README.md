@@ -34,7 +34,7 @@
 ## messages
 |Column|Type|Option|
 |------|----|------|
-|text|text|index: true, null: false|
+|text|text||
 |image|string||
 |user_id|references|foreign_key: true, null: false|
 |group_id|references|foreign_key: true, null: false|
