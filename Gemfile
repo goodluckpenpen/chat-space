@@ -57,3 +57,6 @@ gem 'mechanize'
 
 gem "font-awesome-rails"
 gem 'devise'
+
+gem 'carrierwave'
+gem 'mini_magick'
