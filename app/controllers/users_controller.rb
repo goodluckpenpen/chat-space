@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   
   def index
-    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%")
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id)
     respond_to do |format|
-      # binding.pry
       format.html
       format.json
     end
@@ -21,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def search
-    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id:current_user)
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id)
     render json: @users
   end
 
