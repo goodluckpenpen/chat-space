@@ -14,12 +14,14 @@
           
       .right-header
         .right-header__button
-          Edit
+          %u1
+            = link_to edit_group_path(@group.id) do
+              %li.buttons__list<
+                Edit
 
     .messages
       = render @messages
 
-  
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
