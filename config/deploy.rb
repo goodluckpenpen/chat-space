@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.1"
+# lock "~> 3.11.1"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+# set :application, "my_app_name"
+# set :repo_url, "git@example.com:me/my_repo.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -43,7 +43,7 @@ set :repo_url, "git@example.com:me/my_repo.git"
 lock '3.11.1'
 
 # Capistranoのログの表示に利用する
-set :application, 'chat-soace'
+set :application, 'chat-space'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:goodluckpenpen/chat-space.git'
